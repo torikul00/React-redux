@@ -15,7 +15,7 @@ const Home = () => {
     }, [])
     return (
         <div className='productContainer'>
-            {products.sort((a, b) => a.id - b.id).map(product => <Card key={product.id} product={product} />)}
+            {products.map(product => <Card key={product.id} product={product} />)}
 
         </div>
     );

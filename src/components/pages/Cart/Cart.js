@@ -8,7 +8,7 @@ const Cart = () => {
     return (
         <div className='productContainer'>
 
-            {cartProduct.map(product => <Card product={product} />)}
+            {cartProduct.sort((a, b) => a.id - b.id).map(product => <Card product={product} />)}
 
         </div>
     );

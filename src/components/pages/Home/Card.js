@@ -14,7 +14,9 @@ const Card = ({ product }) => {
 
     return (
         <div className='cardContainer'>
-            <p>{quantity}</p>
+            <div className="wrapper">
+
+                {isCart && <p>{quantity}</p>}
             <div className="cardImage">
                 <img src={image} alt="" />
             </div>
@@ -23,7 +25,8 @@ const Card = ({ product }) => {
                 <strong>Rating : {rating.rate}</strong>
             </div>
             {isCart ? null : <button className='btn' onClick={() => dispatch(addToCart(product))}>Add to Cart</button>}
-            {isCart && <button onClick={() => dispatch(removeFromCart(product))}>Delete</button>}
+            {isCart && <button className='btn' onClick={() => dispatch(removeFromCart(product))}>Delete</button>}
+            </div>
 
         </div>
     );
