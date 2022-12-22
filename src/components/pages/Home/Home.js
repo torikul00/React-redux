@@ -6,6 +6,8 @@ import './Home.css'
 const Home = () => {
 
     const [products, setProduct] = useState([])
+
+
     useEffect(() => {
         fetch('products.json')
             .then(res => res.json())
@@ -13,8 +15,8 @@ const Home = () => {
     }, [])
     return (
         <div className='productContainer'>
-            {products.map(product => <Card key={product.id} product  = {product} />)}
-            
+            {products.sort((a, b) => a.id - b.id).map(product => <Card key={product.id} product={product} />)}
+
         </div>
     );
 };
